@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "9fd49711-27af-4550-a64a-6e7273493474",
+		"name": "Quart通用模块",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "定时任务",
+			"item": [
+				{
+					"name": "查询定时任务列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/job/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取定时任务详细信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/job/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增定时任务",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jobId\":21114,\n    \"jobName\":\"测试任务2\",\n    \"jobGroup\":\"默认组2\",\n    \"invokeTarget\":\"com.jimisun.job.TestJob.run()\",\n    \"cronExpression\":\"* * * * * ?\",\n    \"concurrent\":\"1\",\n    \"status\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/job",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "修改定时任务",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n            \"jobId\": 2344,\n            \"jobName\": \"测试任务\",\n            \"jobGroup\": \"默认组\",\n            \"invokeTarget\": \"com.jimisun.job.TestJob.run()\",\n            \"cronExpression\": \"* * * * * ?\",\n            \"misfirePolicy\": \"0\",\n            \"concurrent\": \"1\",\n            \"status\": \"1\"\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/job",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "定时任务状态修改",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jobId\":21114,\n    \"jobName\":\"测试任务2\",\n    \"jobGroup\":\"默认组2\",\n    \"invokeTarget\":\"com.jimisun.job.TestJob.run()\",\n    \"cronExpression\":\"* * * * * ?\",\n    \"concurrent\":\"1\",\n    \"status\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/job/changeStatus",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job",
+								"changeStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "定时任务立即执行一次",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jobId\":21114,\n    \"jobName\":\"测试任务2\",\n    \"jobGroup\":\"默认组2\",\n    \"invokeTarget\":\"com.jimisun.job.TestJob.run()\",\n    \"cronExpression\":\"* * * * * ?\",\n    \"concurrent\":\"1\",\n    \"status\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/job/run",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job",
+								"run"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除定时任务",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/job/21114",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job",
+								"21114"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "定时任务日志",
+			"item": [
+				{
+					"name": "查询定时任务调度日志列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/job/log/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job",
+								"log",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "根据调度编号获取详细信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/job/log/12",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job",
+								"log",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除定时任务调度日志",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/job/log/12",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job",
+								"log",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "清空定时任务调度日志",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/job/log/clean",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job",
+								"log",
+								"clean"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
